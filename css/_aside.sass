@@ -1,14 +1,20 @@
 .sidebar
+  margin-top: 70px
   position: fixed
   width: 50px
-  height: 100%
+  height: calc(100% - 70px)
   background-color: #777777
-  //left: -270px
   transition: all 300ms linear
   .h1
     display: none
   .aside-menu-item-name
     display: none
+  .aside-menu-footer
+    display: none
+  .aside-menu
+    .aside-menu-item
+      .active-arrow
+        display: none
 
 
 .sidebar.active
@@ -18,37 +24,29 @@
   .aside-menu-item-name
     display: inline-block
     position: absolute
-
-.sidebar .toggle-btn
-  i
-    font-size: 18px
-    color: white
-
-
-.aside-menu-header
-  background-color: #D01C1C
-  height: 70px
-  display: flex
-  justify-content: space-between
-  padding: 16px
-  align-items: center
-  color: white
-  font-family: Sanuk-Medium, sans-serif
-  font-size: 22px
+  .aside-menu-footer
+    display: flex
+  .aside-menu
+    .aside-menu-item
+      .active-arrow
+        display: none
+        position: absolute
+        right: 5px
+        top: 18px
+      &:hover
+        .active-arrow
+          display: block
+    .aside-menu-item.active
+      .active-arrow
+        display: block
 
 
 
 .aside-menu
   overflow-y: scroll
   height: 100%
-
   .aside-menu-item
     position: relative
-    .active-arrow
-      display: none
-      position: absolute
-      right: 5px
-      top: 18px
     a
       font-size: 15px
       text-decoration: none
@@ -62,15 +60,12 @@
         border-left: solid 6px #D01C1C
         font-family: Sanuk-Bold, sans-serif
         background-color: #818181
-        .active-arrow
-          display: block
   .aside-menu-item.active
     a
       background-color: #818181
       font-family: Sanuk-Bold, sans-serif
       border-left: solid 6px #D01C1C
-    .active-arrow
-      display: block
+
 
 
 .aside-menu-footer
@@ -88,7 +83,6 @@
     padding: 0 10px
     height: 35px
     border-right: 5px solid #777777
-
   .version-app
     display: flex
     align-items: center

@@ -51,14 +51,19 @@ button.btn.icon {
     color: #404040; }
 
 .sidebar {
+  margin-top: 70px;
   position: fixed;
   width: 50px;
-  height: 100%;
+  height: calc(100% - 70px);
   background-color: #777777;
   transition: all 300ms linear; }
   .sidebar .h1 {
     display: none; }
   .sidebar .aside-menu-item-name {
+    display: none; }
+  .sidebar .aside-menu-footer {
+    display: none; }
+  .sidebar .aside-menu .aside-menu-item .active-arrow {
     display: none; }
 
 .sidebar.active {
@@ -68,32 +73,23 @@ button.btn.icon {
   .sidebar.active .aside-menu-item-name {
     display: inline-block;
     position: absolute; }
-
-.sidebar .toggle-btn i {
-  font-size: 18px;
-  color: white; }
-
-.aside-menu-header {
-  background-color: #D01C1C;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  align-items: center;
-  color: white;
-  font-family: Sanuk-Medium, sans-serif;
-  font-size: 22px; }
+  .sidebar.active .aside-menu-footer {
+    display: flex; }
+  .sidebar.active .aside-menu .aside-menu-item .active-arrow {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 18px; }
+  .sidebar.active .aside-menu .aside-menu-item:hover .active-arrow {
+    display: block; }
+  .sidebar.active .aside-menu .aside-menu-item.active .active-arrow {
+    display: block; }
 
 .aside-menu {
   overflow-y: scroll;
   height: 100%; }
   .aside-menu .aside-menu-item {
     position: relative; }
-    .aside-menu .aside-menu-item .active-arrow {
-      display: none;
-      position: absolute;
-      right: 5px;
-      top: 18px; }
     .aside-menu .aside-menu-item a {
       font-size: 15px;
       text-decoration: none;
@@ -107,14 +103,10 @@ button.btn.icon {
         border-left: solid 6px #D01C1C;
         font-family: Sanuk-Bold, sans-serif;
         background-color: #818181; }
-        .aside-menu .aside-menu-item a:hover .active-arrow {
-          display: block; }
   .aside-menu .aside-menu-item.active a {
     background-color: #818181;
     font-family: Sanuk-Bold, sans-serif;
     border-left: solid 6px #D01C1C; }
-  .aside-menu .aside-menu-item.active .active-arrow {
-    display: block; }
 
 .aside-menu-footer {
   position: absolute;
@@ -144,41 +136,70 @@ button.btn.icon {
     text-transform: uppercase; }
 
 .head-menu {
+  height: 70px;
   background-color: white;
   display: flex;
-  align-items: center;
+  position: fixed;
+  min-width: 100%; }
+
+.head-menu-left.active {
+  width: 320px; }
+  .head-menu-left.active .h1 {
+    display: block; }
+
+.head-menu-left {
+  transition: all 300ms linear;
+  display: flex;
   justify-content: space-between;
-  height: 70px;
-  padding: 15px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2); }
-  .head-menu .search-form {
+  align-items: center;
+  flex-shrink: 0;
+  width: 50px;
+  background-color: #D01C1C;
+  padding: 16px; }
+  .head-menu-left .h1 {
+    display: none;
+    color: white;
+    font-family: Sanuk-Medium, sans-serif;
+    font-size: 22px; }
+  .head-menu-left .toggle-btn {
+    cursor: pointer; }
+    .head-menu-left .toggle-btn i {
+      font-size: 18px;
+      color: white; }
+
+.head-menu-right {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center; }
+  .head-menu-right .search-form {
     display: flex;
     width: 100%; }
-    .head-menu .search-form input {
+    .head-menu-right .search-form input {
       width: 100%;
       border: none;
       padding: 12px 5px;
       font-family: "sanuk-regular", sans-serif; }
-      .head-menu .search-form input::-webkit-input-placeholder {
+      .head-menu-right .search-form input::-webkit-input-placeholder {
         font-family: "sanuk-regular", sans-serif;
         font-style: italic; }
-      .head-menu .search-form input::-moz-placeholder {
+      .head-menu-right .search-form input::-moz-placeholder {
         font-family: "sanuk-regular", sans-serif;
         font-style: italic; }
-      .head-menu .search-form input:-ms-input-placeholder {
+      .head-menu-right .search-form input:-ms-input-placeholder {
         font-family: "sanuk-regular", sans-serif;
         font-style: italic; }
-      .head-menu .search-form input:-moz-placeholder {
+      .head-menu-right .search-form input:-moz-placeholder {
         font-family: "sanuk-regular", sans-serif;
         font-style: italic; }
-  .head-menu .divider {
+  .head-menu-right .divider {
     background-color: #707070;
     display: inline-block;
     width: 1px;
     height: 100%;
     opacity: 0.2;
     margin: 0 10px; }
-  .head-menu .icons-menu {
+  .head-menu-right .icons-menu {
     display: flex; }
 
 /* Dropdown Button */
@@ -244,11 +265,17 @@ body {
   background-color: #DDDDDD; }
 
 .main {
+  padding: 20px;
   margin-left: 50px;
   transition: all 300ms linear; }
 
 .main.active {
   margin-left: 320px;
   transition: all 300ms linear; }
+
+.content-main {
+  margin-top: 70px; }
+  .content-main p {
+    margin-bottom: 16px; }
 
 /*# sourceMappingURL=main.css.map */
