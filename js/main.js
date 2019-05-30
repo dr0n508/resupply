@@ -2,7 +2,7 @@
 
     /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-    function myFunction() {
+    function openDropdown() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
 
@@ -22,9 +22,29 @@ toggle between hiding and showing the dropdown content */
 
 
     function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle('active');
+        document.getElementById("sidebar").classList.toggle('wide');
         document.getElementById("main").classList.toggle('active');
-        document.getElementById("head-menu-left").classList.toggle('active');
-
-
+        document.getElementById("head-menu-left").classList.toggle('wide');
     }
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            var element = document.getElementById("sidebar");
+            element.classList.remove("wide");
+
+            var element2 = document.getElementById("main");
+            element2.classList.remove("active");
+
+            var element3 = document.getElementById("head-menu-left");
+            element3.classList.remove("wide");
+
+
+        } else {
+            // document.body.style.backgroundColor = "pink";
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 700px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+
