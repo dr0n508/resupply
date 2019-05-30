@@ -50,36 +50,26 @@ button.btn.icon {
   button.btn.icon:hover i {
     color: #404040; }
 
-div, p, a, span, em, strong, img, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, td, tr, form, fieldset, label, select, checkbox, input, textarea {
-  padding: 0;
-  margin: 0;
-  list-style: none; }
-
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; }
-
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "sanuk-regular", sans-serif;
-  line-height: 1.25;
-  font-size: 14px;
-  background-color: #DDDDDD; }
-
-#sidebar {
+.sidebar {
   position: fixed;
-  width: 320px;
+  width: 50px;
   height: 100%;
   background-color: #777777;
-  left: -270px;
-  transition: all 500ms linear; }
+  transition: all 300ms linear; }
+  .sidebar .h1 {
+    display: none; }
+  .sidebar .aside-menu-item-name {
+    display: none; }
 
-#sidebar.active {
-  left: 0px; }
+.sidebar.active {
+  width: 320px; }
+  .sidebar.active .h1 {
+    display: block; }
+  .sidebar.active .aside-menu-item-name {
+    display: inline-block;
+    position: absolute; }
 
-#sidebar .toggle-btn i {
+.sidebar .toggle-btn i {
   font-size: 18px;
   color: white; }
 
@@ -129,17 +119,18 @@ body {
 .aside-menu-footer {
   position: absolute;
   bottom: 0;
-  width: 320px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: #80BC00;
+  height: 35px; }
   .aside-menu-footer .stea-logo {
     display: flex;
     align-items: center;
-    background-color: #80BC00;
     padding: 0 10px;
     height: 35px;
-    margin-right: 5px; }
+    border-right: 5px solid #777777; }
   .aside-menu-footer .version-app {
     display: flex;
     align-items: center;
@@ -147,11 +138,48 @@ body {
     height: 35px;
     padding: 10px;
     width: 100%;
-    background-color: #80BC00;
     color: white;
     font-size: 10px;
     font-family: Sanuk-Medium, sans-serif;
     text-transform: uppercase; }
+
+.head-menu {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 15px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2); }
+  .head-menu .search-form {
+    display: flex;
+    width: 100%; }
+    .head-menu .search-form input {
+      width: 100%;
+      border: none;
+      padding: 12px 5px;
+      font-family: "sanuk-regular", sans-serif; }
+      .head-menu .search-form input::-webkit-input-placeholder {
+        font-family: "sanuk-regular", sans-serif;
+        font-style: italic; }
+      .head-menu .search-form input::-moz-placeholder {
+        font-family: "sanuk-regular", sans-serif;
+        font-style: italic; }
+      .head-menu .search-form input:-ms-input-placeholder {
+        font-family: "sanuk-regular", sans-serif;
+        font-style: italic; }
+      .head-menu .search-form input:-moz-placeholder {
+        font-family: "sanuk-regular", sans-serif;
+        font-style: italic; }
+  .head-menu .divider {
+    background-color: #707070;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    opacity: 0.2;
+    margin: 0 10px; }
+  .head-menu .icons-menu {
+    display: flex; }
 
 /* Dropdown Button */
 .dropbtn {
@@ -197,45 +225,30 @@ body {
 .show {
   display: block; }
 
-.top-menu {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-  padding: 15px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2); }
-  .top-menu .search-form {
-    display: flex;
-    width: 100%; }
-    .top-menu .search-form input {
-      width: 100%;
-      border: none;
-      padding: 12px 5px;
-      font-family: "sanuk-regular", sans-serif; }
-      .top-menu .search-form input::-webkit-input-placeholder {
-        font-family: "sanuk-regular", sans-serif;
-        font-style: italic; }
-      .top-menu .search-form input::-moz-placeholder {
-        font-family: "sanuk-regular", sans-serif;
-        font-style: italic; }
-      .top-menu .search-form input:-ms-input-placeholder {
-        font-family: "sanuk-regular", sans-serif;
-        font-style: italic; }
-      .top-menu .search-form input:-moz-placeholder {
-        font-family: "sanuk-regular", sans-serif;
-        font-style: italic; }
-  .top-menu .divider {
-    background-color: #707070;
-    display: inline-block;
-    width: 1px;
-    height: 100%;
-    opacity: 0.2;
-    margin: 0 10px; }
-  .top-menu .icons-menu {
-    display: flex; }
+div, p, a, span, em, strong, img, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, td, tr, form, fieldset, label, select, checkbox, input, textarea {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
 
-#main-content {
-  margin-left: 320px; }
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "sanuk-regular", sans-serif;
+  line-height: 1.25;
+  font-size: 14px;
+  background-color: #DDDDDD; }
+
+.main {
+  margin-left: 50px;
+  transition: all 300ms linear; }
+
+.main.active {
+  margin-left: 320px;
+  transition: all 300ms linear; }
 
 /*# sourceMappingURL=main.css.map */

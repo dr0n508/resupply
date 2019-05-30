@@ -23,5 +23,5 @@ toggle between hiding and showing the dropdown content */
 
     function toggleSidebar() {
         document.getElementById("sidebar").classList.toggle('active');
-        // document.getElementById("main-content").style.marginLeft = "320px";
+        document.getElementById("main").classList.toggle('active');
     }
