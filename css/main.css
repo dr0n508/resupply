@@ -51,56 +51,54 @@
   .btn.icon:hover i {
     color: #404040; }
 
-.sidebar {
-  margin-top: 70px;
+.aside {
   position: fixed;
+  margin-top: 70px;
   width: 50px;
   height: calc(100% - 70px);
   background-color: #777777;
   transition: all 300ms linear; }
-  .sidebar .h1 {
+  .aside .h1 {
     display: none; }
-  .sidebar .aside-footer {
+  .aside .aside-menu .aside-menu-item .active-arrow {
     display: none; }
-  .sidebar .aside-menu .aside-menu-item .active-arrow {
-    display: none; }
-  .sidebar .aside-menu .aside-menu-item a {
+  .aside .aside-menu .aside-menu-item a {
     white-space: nowrap; }
-  .sidebar .aside-menu .aside-menu-item a:hover {
+    .aside .aside-menu .aside-menu-item a:hover {
+      border-color: transparent;
+      background-color: #4c4c4c; }
+  .aside .aside-menu .aside-menu-item.active a {
     border-color: transparent;
     background-color: #4c4c4c; }
-  .sidebar .aside-menu .aside-menu-item.active a {
-    border-color: transparent;
-    background-color: #4c4c4c; }
+  .aside .aside-footer {
+    display: none; }
 
-.sidebar.wide {
+.aside.wide {
   width: 320px; }
   @media only screen and (max-width: 415px) {
-    .sidebar.wide {
+    .aside.wide {
       width: 100%; } }
-  .sidebar.wide .h1 {
-    display: block; }
-  .sidebar.wide .aside-footer {
-    display: flex; }
-  .sidebar.wide .aside-menu .aside-menu-item .active-arrow {
+  .aside.wide .aside-menu .aside-menu-item .active-arrow {
     display: none;
     position: absolute;
     right: 5px;
     top: 18px; }
-  .sidebar.wide .aside-menu .aside-menu-item:hover .active-arrow {
+  .aside.wide .aside-menu .aside-menu-item:hover .active-arrow {
     display: block; }
-  .sidebar.wide .aside-menu .aside-menu-item a {
+  .aside.wide .aside-menu .aside-menu-item a {
     white-space: nowrap; }
-    .sidebar.wide .aside-menu .aside-menu-item a:hover {
+    .aside.wide .aside-menu .aside-menu-item a:hover {
       border-left: solid 6px #D01C1C;
       font-family: Sanuk-Bold, sans-serif;
       background-color: #818181; }
-  .sidebar.wide .aside-menu .aside-menu-item.active a {
+  .aside.wide .aside-menu .aside-menu-item.active a {
     background-color: #818181;
     font-family: Sanuk-Bold, sans-serif;
     border-left: solid 6px #D01C1C; }
-  .sidebar.wide .aside-menu .aside-menu-item.active .active-arrow {
+  .aside.wide .aside-menu .aside-menu-item.active .active-arrow {
     display: block; }
+  .aside.wide .aside-footer {
+    display: flex; }
 
 .aside-menu {
   overflow-y: scroll;
@@ -120,12 +118,12 @@
 .aside-footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #80BC00;
-  height: 35px; }
+  width: 100%;
+  height: 35px;
+  background-color: #80BC00; }
   .aside-footer .stea-logo {
     display: flex;
     align-items: center;

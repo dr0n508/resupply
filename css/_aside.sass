@@ -1,13 +1,11 @@
-.sidebar
-  margin-top: 70px
+.aside
   position: fixed
+  margin-top: 70px
   width: 50px
   height: calc(100% - 70px)
   background-color: #777777
   transition: all 300ms linear
   .h1
-    display: none
-  .aside-footer
     display: none
   .aside-menu
     .aside-menu-item
@@ -15,23 +13,19 @@
         display: none
       a
         white-space: nowrap
-
-      a:hover
-        border-color: transparent
-        background-color: #4c4c4c
+        &:hover
+          border-color: transparent
+          background-color: #4c4c4c
     .aside-menu-item.active a
       border-color: transparent
       background-color: #4c4c4c
+  .aside-footer
+    display: none
 
-
-.sidebar.wide
+.aside.wide
   width: 320px
   @media only screen and (max-width: 415px)
     width: 100%
-  .h1
-    display: block
-  .aside-footer
-    display: flex
   .aside-menu
     .aside-menu-item
       .active-arrow
@@ -56,6 +50,8 @@
         border-left: solid 6px #D01C1C
       .active-arrow
         display: block
+  .aside-footer
+    display: flex
 
 .aside-menu
   overflow-y: scroll
@@ -72,18 +68,15 @@
       i
         margin-right: 20px
 
-
-
-
 .aside-footer
   position: absolute
   bottom: 0
-  width: 100%
   display: flex
   align-items: center
   justify-content: space-between
-  background-color: #80BC00
+  width: 100%
   height: 35px
+  background-color: #80BC00
   .stea-logo
     display: flex
     align-items: center

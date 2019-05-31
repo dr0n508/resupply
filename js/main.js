@@ -1,12 +1,12 @@
 function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle('wide');
+    document.getElementById("aside").classList.toggle('wide');
     document.getElementById("main").classList.toggle('active');
     document.getElementById("head-menu-left").classList.toggle('wide');
 }
 
 function narrowSidebarOnMobile(x) {
     if (x.matches) { // If media query matches
-        document.getElementById("sidebar").classList.remove("wide");
+        document.getElementById("aside").classList.remove("wide");
         document.getElementById("main").classList.remove("active");
         document.getElementById("head-menu-left").classList.remove("wide");
     }
