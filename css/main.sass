@@ -24,16 +24,20 @@ body
   background-color: #DDDDDD
 
 .main
-  padding: 20px
   margin-left: 50px
   transition: all 300ms linear
+  position: fixed
+  height: calc(100% - 70px)
 
 .main.active
   margin-left: 320px
   transition: all 300ms linear
 
 .content-main
-  margin-top: 70px
+  padding: 20px
+  overflow-y: auto
+  overflow-x: hidden
+  height: 100%
   p
     font-size: 16px
     margin-bottom: 16px
